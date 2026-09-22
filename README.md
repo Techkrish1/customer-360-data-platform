@@ -47,4 +47,4 @@ No real company data. No confidential architecture. Synthetic datasets only.
 
 ## Connect
 
-LinkedIn: [Add your LinkedIn URL]
+LinkedIn: [Gokulakrishnan Venkatesan](https://www.linkedin.com/in/gokulakrishnan-venkatesan-93a3a8227)
