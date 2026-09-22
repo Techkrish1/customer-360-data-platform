@@ -1,0 +1,43 @@
+# Credentials — never commit these
+.env
+*.env
+config.yaml
+!config.template.yaml
+secrets.json
+*.key
+*.pem
+
+# Real data — synthetic only in /data folders
+*.parquet
+*.orc
+!data/synthetic_*.csv
+!data/synthetic_*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

@@ -1,0 +1,32 @@
+# Configuration Template — copy to config.yaml and fill in values
+# NEVER commit config.yaml — it is in .gitignore
+
+source:
+  postgres:
+    host: localhost
+    port: 5432
+    database: retail
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
+    schema: public
+
+staging:
+  adls:
+    account_name: YOUR_ADLS_ACCOUNT
+    container: raw
+    connection_string: YOUR_CONNECTION_STRING
+
+warehouse:
+  snowflake:
+    account: YOUR_ACCOUNT
+    database: RETAILCO
+    schema: INCREMENTAL
+    warehouse: YOUR_WAREHOUSE
+    role: YOUR_ROLE
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
+
+pipeline:
+  watermark_table: RETAILCO.METADATA.PIPELINE_WATERMARKS
+  overlap_minutes: 15
+  batch_size: 100000
