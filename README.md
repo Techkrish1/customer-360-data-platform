@@ -1,15 +1,27 @@
-# Retail Data Platform
+# Customer 360 Data Platform
 
-An end-to-end Data Engineering platform built on real-world business problems.
+An end-to-end Data Engineering platform that ingests, transforms, and delivers
+customer behavioural data for churn risk analysis and segmentation.
 
-Each problem follows the same structure:
-1. **Business Problem** — what the business actually needs and why
-2. **Architecture** — design decisions, trade-offs, alternatives
-3. **CDI / CDIE Implementation** — Informatica Cloud approach
-4. **PySpark Implementation** — explicit code-level engineering
-5. **Experiments** — measured comparisons, not claimed improvements
-6. **Interview Questions** — what interviewers probe at each decision point
-7. **LinkedIn Posts** — one concept per post, discussion-worthy framing
+Built to demonstrate production-grade Data Engineering thinking across:
+architecture decisions, incremental pipelines, data quality, distributed processing,
+and analytics-ready data delivery.
+
+---
+
+## What This Project Covers
+
+Each problem in this series follows the same progression:
+
+| Step | What |
+|------|------|
+| Business Problem | The real requirement, assumptions, and what a DE must think about first |
+| Architecture | Design decisions, trade-offs, alternatives, and scale considerations |
+| CDI / CDIE | Informatica implementation — what the platform abstracts and where it fits |
+| PySpark | Code-level implementation — what the engineer must own explicitly |
+| Experiments | Measured comparisons on real data — not claimed improvements |
+| Interview Q&A | What interviewers probe at every decision point |
+| LinkedIn Posts | One engineering concept per post — discussion-worthy, not tutorial-style |
 
 ---
 
@@ -17,28 +29,45 @@ Each problem follows the same structure:
 
 | Layer | Technology |
 |-------|-----------|
-| Source | PostgreSQL (Docker) |
-| Raw / Bronze | ADLS Gen2 (Parquet / Delta) |
-| Object Storage | AWS S3 |
-| Transformation | Informatica CDI / CDIE, PySpark |
+| Source | PostgreSQL 14 |
+| Raw / Bronze | ADLS Gen2 — Parquet |
+| Silver / Curated | ADLS Gen2 — Delta |
+| Transformation | Informatica CDI / CDIE · PySpark |
 | Warehouse | Snowflake |
 | Lakehouse | Microsoft Fabric |
-| Orchestration | To be added |
+| Visualisation | Power BI |
 
 ---
 
 ## Problems
 
-| # | Problem | Core Concept | Status |
-|---|---------|-------------|--------|
-| 01 | [Incremental Data Ingestion](problems/01-incremental-ingestion/README.md) | High-water mark, idempotency, watermark state | In Progress |
+| # | Problem | Core Engineering Concepts | Status |
+|---|---------|--------------------------|--------|
+| 01 | [Incremental Customer Data Ingestion](problems/01-incremental-ingestion/README.md) | High-water mark · Idempotency · Watermark state · Failure recovery | In Progress |
+| 02 | Customer 360 Pipeline | Joins · Aggregations · RFM features · Late-arriving data | Planned |
+| 03 | SCD Type 2 — Customer History | Slowly changing dimensions · History tracking · Upserts | Planned |
+| 04 | Data Quality Framework | Expectations · Dead letters · Schema evolution | Planned |
+| 05 | Spark Performance & Optimisation | Partitioning · Skew · Shuffle · Joins at scale | Planned |
+| 06 | CDC Pipeline | Change data capture · Real-time vs near-real-time | Planned |
+| 07 | Failure & Recovery | Retry logic · Backfill · Exactly-once semantics | Planned |
+| 08 | Power BI — Customer Churn Dashboard | Analytics-ready data · RFM segmentation · Churn risk scoring | Planned |
 
 ---
 
-## Credibility Rules
+## Architecture Principles
+
+- **Idempotency first** — every pipeline produces the same result if run twice
+- **Separate extraction from loading** — staging layer decouples failure domains
+- **Watermarks are owned by the pipeline, not the tool** — persisted in metadata, not in-memory
+- **Assumptions are explicit** — silent assumptions become production incidents
+- **Cost is a first-class concern** — every architecture decision considers compute and storage cost
+
+---
+
+## Credibility
 
 - `I implemented` — built and ran myself
-- `I explored` — studied and understood but not run in production
+- `I explored` — studied and understood, not run in production
 - `I designed` — conceptual design only
 
 No real company data. No confidential architecture. Synthetic datasets only.
