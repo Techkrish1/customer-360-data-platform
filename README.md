@@ -21,7 +21,6 @@ Each problem in this series follows the same progression:
 | PySpark | Code-level implementation — what the engineer must own explicitly |
 | Experiments | Measured comparisons on real data — not claimed improvements |
 | Interview Q&A | What interviewers probe at every decision point |
-| LinkedIn Posts | One engineering concept per post — discussion-worthy, not tutorial-style |
 
 ---
 
@@ -30,11 +29,10 @@ Each problem in this series follows the same progression:
 | Layer | Technology |
 |-------|-----------|
 | Source | PostgreSQL 14 |
-| Raw / Bronze | ADLS Gen2 — Parquet |
-| Silver / Curated | ADLS Gen2 — Delta |
+| Raw / Bronze | S3 — Parquet |
+| Silver / Gold | S3 — Delta Lake |
 | Transformation | Informatica CDI / CDIE · PySpark |
-| Warehouse | Snowflake |
-| Lakehouse | Microsoft Fabric |
+| Lakehouse | Databricks |
 | Visualisation | Power BI |
 
 ---
