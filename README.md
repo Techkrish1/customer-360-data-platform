@@ -1,6 +1,6 @@
-# Data Engineering Problems Portfolio
+# Retail Data Platform
 
-Real-world Data Engineering problems solved end-to-end.
+An end-to-end Data Engineering platform built on real-world business problems.
 
 Each problem follows the same structure:
 1. **Business Problem** — what the business actually needs and why
