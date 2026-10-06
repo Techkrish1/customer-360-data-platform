@@ -12,10 +12,10 @@ import yaml
 import requests
 from pathlib import Path
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 NOTEBOOKS_DIR = Path(__file__).parent / "notebooks"
 
-WORKSPACE_FOLDER = "/customer-360-platform/problem-01"
+WORKSPACE_FOLDER = "/customer-360-platform"
 WAREHOUSE_ID     = "7936c993ce977595"
 
 NOTEBOOKS = [

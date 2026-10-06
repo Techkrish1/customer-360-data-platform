@@ -12,7 +12,7 @@ import boto3
 import requests
 from pathlib import Path
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 
 VOLUME_BASE  = "Volumes/workspace/customer360/bronze_files"
 TABLES       = ["orders", "customers", "order_items"]

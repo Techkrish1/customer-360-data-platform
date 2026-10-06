@@ -8,7 +8,7 @@ import yaml
 from datetime import datetime, timedelta
 from pathlib import Path
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 
 with open(CONFIG_PATH) as f:
     cfg = yaml.safe_load(f)["source"]["postgres"]

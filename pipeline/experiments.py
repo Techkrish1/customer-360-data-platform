@@ -25,14 +25,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import importlib
-simulate_mod   = importlib.import_module("00_simulate_data")
-bronze_mod     = importlib.import_module("01_extract_bronze")
-silver_mod     = importlib.import_module("02_silver_transform")
-dimensions_mod = importlib.import_module("03_gold_dimensions")
-facts_mod      = importlib.import_module("04_gold_facts")
-mart_mod       = importlib.import_module("05_gold_mart")
+simulate_mod   = importlib.import_module("simulate_data")
+bronze_mod     = importlib.import_module("extract_bronze")
+silver_mod     = importlib.import_module("silver_transform")
+dimensions_mod = importlib.import_module("gold_dimensions")
+facts_mod      = importlib.import_module("gold_facts")
+mart_mod       = importlib.import_module("gold_mart")
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 
 SEPARATOR = "=" * 60
 

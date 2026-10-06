@@ -25,7 +25,7 @@ from pathlib import Path
 from deltalake import DeltaTable, write_deltalake
 from deltalake.exceptions import TableNotFoundError
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 
 # ── Table configuration ───────────────────────────────────────────────────────
 

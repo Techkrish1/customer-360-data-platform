@@ -17,7 +17,7 @@ import psycopg2
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 
 PIPELINE_NAME  = "orders_incremental"
 OVERLAP_MINUTES = 15

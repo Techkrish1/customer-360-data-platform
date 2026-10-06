@@ -12,7 +12,7 @@ import requests
 from pathlib import Path
 from datetime import datetime, timezone
 
-CONFIG_PATH = Path(__file__).parents[3] / "shared" / "config" / "config.yaml"
+CONFIG_PATH = Path(__file__).parents[1] / "config" / "config.yaml"
 JOB_ID      = 644685154057195
 
 
