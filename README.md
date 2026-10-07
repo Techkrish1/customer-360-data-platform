@@ -34,6 +34,16 @@ An end-to-end data engineering pipeline that ingests raw retail transactions fro
 
 ---
 
+## Data Models
+
+### OLTP — PostgreSQL Source Schema
+![OLTP ER Diagram](architecture/diagrams/oltp_er_diagram.png)
+
+### OLAP — Gold Layer Star Schema (Delta Lake on S3)
+![OLAP Star Schema](architecture/diagrams/olap_star_schema.png)
+
+---
+
 ## Tech Stack
 
 | Component | Technology |
